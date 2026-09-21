@@ -3,7 +3,7 @@
 # node runtime and nothing else to keep patched.
 
 # ── stage 1: build the single-page application ──────────────────────────────
-FROM node:20-alpine AS web
+FROM node:26-alpine AS web
 WORKDIR /web
 COPY web/package*.json ./
 # npm ci installs exactly what package-lock.json pins, which is what a

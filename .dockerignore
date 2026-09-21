@@ -1,0 +1,8 @@
+.git
+node_modules
+web/node_modules
+cmd/issuerd/webdist
+deploy
+docs
+*.key
+*.vc.json

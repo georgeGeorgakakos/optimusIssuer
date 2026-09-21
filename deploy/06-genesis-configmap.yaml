@@ -1,0 +1,38 @@
+# The genesis trust list, mounted into the OptimusDB agents (not into
+# optimusIssuer). Produce it with:
+#
+#   issuerctl genesis --key root.key   --name "ICCS Root Issuer" \
+#                     --key issuer.key --name "optimusIssuer service" \
+#                     --out issuers.json
+#
+# Two entries, deliberately. The root key stays offline and signs almost
+# nothing; if the service key is ever compromised, the root signs one record
+# marking it inactive and every credential it issued stops verifying — without
+# redeploying anything.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: optimusdb-genesis-issuers
+  namespace: optimusddc
+data:
+  issuers.json: |
+    [
+      {
+        "_id": "did:key:zROOT_REPLACE_ME",
+        "record_type": "trusted_issuer",
+        "name": "ICCS Root Issuer (offline)",
+        "may_issue": ["OptimusDBCapability"],
+        "max_delegation_depth": 2,
+        "status": "active",
+        "added_by": "genesis"
+      },
+      {
+        "_id": "did:key:zSERVICE_REPLACE_ME",
+        "record_type": "trusted_issuer",
+        "name": "optimusIssuer service",
+        "may_issue": ["OptimusDBCapability"],
+        "max_delegation_depth": 1,
+        "status": "active",
+        "added_by": "genesis"
+      }
+    ]

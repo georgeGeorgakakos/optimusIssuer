@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="issuerd (dev)" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="optimusIssuer" />
+    <working_directory value="$PROJECT_DIR$" />
+    <!-- Operator authentication is disabled in this configuration. The service
+         logs a warning on every start; never run this way against anything real. -->
+    <parameters value="-key ./dev.key -agent http://localhost:18001 -oidc-issuer= -addr :8090" />
+    <kind value="PACKAGE" />
+    <package value="github.com/georgeGeorgakakos/optimusIssuer/cmd/issuerd" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$/cmd/issuerd/main.go" />
+    <method v="2" />
+  </configuration>
+</component>

@@ -1,0 +1,428 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.1.1 Chrome/132.0.6834.210 Electron/34.3.3 Safari/537.36" version="26.1.1" pages="4">
+  <diagram name="1 — Components by kind" id="1_—_Components_by_kind">
+    <mxGraphModel dx="1674" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1020" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n3" value="CONTAINERS — things that appear in kubectl get pods" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=none;strokeColor=#808080;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=2;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="30" y="90" width="1440" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="optimusdb1&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;agent · verifies credentials&lt;br&gt;:8089 HTTP  :4001 libp2p&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="130" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="optimusdb2&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;agent · verifies credentials&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="390" y="130" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="optimusdb3&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;agent · verifies credentials&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="720" y="130" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="optimusIssuer&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;signs credentials · React UI&lt;br&gt;:8090  NEW&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="130" width="390" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="keycloak&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;operator browser sessions only (used for optimusDDC portal AAA not for DID)&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="225" width="300" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="catalogfrontend&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;OptimusDDC user interface&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="390" y="225" width="300" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="catalogsearch / catalogmetadata&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;OptimusDDC services&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="720" y="225" width="300" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" value="traefik&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;ingress · in kube-system&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="225" width="390" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" value="Actors" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=none;strokeColor=#808080;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=2;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="30" y="350" width="700" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" value="Operator&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;approves issuance&lt;br&gt;Keycloak login&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="110" y="400" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" value="Root issuer&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;holds the offline key&lt;br&gt;bootstrap and emergency only&lt;/font&gt;" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="360" y="400" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" value="Two distinct roles even when the same person performs both. The operator never touches the root key; the root issuer never signs day-to-day credentials." style="text;html=1;align=left;verticalAlign=top;fillColor=none;strokeColor=none;fontSize=11;fontColor=#555555;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="450" y="400" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="n16" value="FILES ON DISK — not containers, not services" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=none;strokeColor=#808080;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=2;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="760" y="350" width="710" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="n17" value="app.key&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;application private key&lt;br&gt;mode 0600&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="790" y="395" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n18" value="app.vc.json&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;the credential&lt;br&gt;not a secret&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1010" y="395" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n19" value="root.key&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;offline, sealed&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1230" y="395" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n20" value="issuers.json&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;the genesis list · becomes a ConfigMap&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="790" y="470" width="420" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" value="service key Secret&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;mounted read-only&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1230" y="470" width="210" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n22" value="EXTERNAL APPLICATIONS — processes, wherever you run them" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=none;strokeColor=#808080;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=2;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="30" y="570" width="700" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="n23" value="A 3rd Party app&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;holds app.key + credential&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="615" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n24" value="optimusPy&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;client library use though the DID addition&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="280" y="615" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n25" value="curl / scripts&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;ad hoc&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="500" y="615" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n26" value="None of these is deployed by you into the cluster. They run on a laptop, a server, or in CI — anywhere that can reach an agent over HTTP." style="text;html=1;align=left;verticalAlign=top;fillColor=none;strokeColor=none;fontSize=11;fontColor=#555555;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="60" y="690" width="640" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n27" value="RECORDS INSIDE THE AGENTS — data, not components" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=none;strokeColor=#808080;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=2;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="760" y="570" width="710" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="n28" value="kbtrust&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;trusted issuers&lt;br&gt;revocations&lt;/font&gt;" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="790" y="615" width="205" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n29" value="kbissuance&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;requests&lt;br&gt;issuance records&lt;/font&gt;" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1015" y="615" width="205" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n30" value="whoiswho&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;descriptive&lt;br&gt;identity records&lt;/font&gt;" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1240" y="615" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n31" value="Replicated to every agent by the existing libp2p connection. No separate database and no volume of their own." style="text;html=1;align=left;verticalAlign=top;fillColor=none;strokeColor=none;fontSize=11;fontColor=#555555;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="790" y="695" width="650" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2 — The fourteen steps on the components" id="2_—_The_fourteen_steps_on_the_components">
+    <mxGraphModel dx="1674" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1" value="&amp;nbsp;fourteen steps, mapped onto the components" style="text;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontSize=18;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="30" y="16" width="1440" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="3rd Psrty Apps&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;holds app.key and the credential&lt;br&gt;steps 1, 4, 5, 7 are entirely local&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="130" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="app.key" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="250" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="app.vc.json" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="220" y="250" width="140" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="optimusIssuer&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;signs with the service key&lt;br&gt;steps 2, 2a, 3, 3a, 10&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="130" width="320" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="Operator" style="shape=umlActor;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;html=1;outlineConnect=0;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="660" y="260" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="optimusdb1..3&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;verify locally&lt;br&gt;steps 3a, 6, 8, 9&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1130" y="130" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="kbtrust · kbissuance · whoiswho" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1130" y="260" width="310" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="Root issuer, offline&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;bootstrap and emergency only&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;dashed=1;dashPattern=4 4;" parent="1" vertex="1">
+          <mxGeometry x="600" y="430" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" value="ConfigMap&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;genesis issuer list&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1130" y="430" width="310" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;dashed=1;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n3" target="n4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12l" value="1 · generate" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e12" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;dashed=1;exitX=0.55;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n3" target="n5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13l" value="4 · install" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e13" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="n3" target="n6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14l" value="2 · submit request  (DID only)" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e14" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-50" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.2;entryY=1;entryDx=0;entryDy=0;" parent="1" source="n7" target="n6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15l" value="2a · review, narrow, approve" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e15" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;dashed=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="n6" target="n3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16l" value="3 · signed credential returned" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e16" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-60" y="3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" parent="1" source="n6" target="n8" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e17l" value="3a · record issuance" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e17" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;exitX=1;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.35;entryDx=0;entryDy=0;" parent="1" source="n6" target="n9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="200" />
+              <mxPoint x="1050" y="285" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18l" value="10 · revocation into kbtrust" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e18" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n3" target="n8" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="90" />
+              <mxPoint x="1285" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e19l" value="6 · challenge     8 · write     9 · query" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e19" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="n8" target="n9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;dashed=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="n10" target="n11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e21l" value="bootstrap · genesis list" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e21" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="n11" target="n9" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e22l" value="read once at first start" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e22" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#000000;endArrow=block;dashed=1;exitX=1;exitY=0.8;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="n10" target="n9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1020" y="500" />
+              <mxPoint x="1207" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e23l" value="emergency · mark the service issuer inactive" style="edgeLabel;html=1;fontSize=10;labelBackgroundColor=#FFFFFF;fontColor=#000000;fontStyle=1;" parent="e23" vertex="1" connectable="0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3 — Deployment view" id="3_—_Deployment_view">
+    <mxGraphModel dx="1674" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="960" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n3" value="kube-system" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=none;strokeColor=#808080;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=2;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="30" y="90" width="1440" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="traefik&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;ingress · TLS termination · path routing&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="90" y="120" width="1350" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="namespace: optimusddc — unchanged by this design" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=none;strokeColor=#808080;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=2;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="30" y="190" width="1000" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="optimusdb1&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;Deployment · 1 pod · 1 container&lt;br&gt;agent + llama-server under supervisord&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="230" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="Service&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;:8089 HTTP  ·  :4001 libp2p&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="345" width="290" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="PVC&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;stores, SQLite, libp2p key&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="405" width="290" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="optimusdb2&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;Deployment · 1 pod · 1 container&lt;br&gt;agent + llama-server under supervisord&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="380" y="230" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="Service&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;:8089 HTTP  ·  :4001 libp2p&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="380" y="345" width="290" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" value="PVC&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;stores, SQLite, libp2p key&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="380" y="405" width="290" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" value="optimusdb3&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;Deployment · 1 pod · 1 container&lt;br&gt;agent + llama-server under supervisord&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="700" y="230" width="290" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" value="Service&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;:8089 HTTP  ·  :4001 libp2p&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="700" y="345" width="290" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" value="PVC&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;stores, SQLite, libp2p key&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="700" y="405" width="290" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" value="kbtrust · kbissuance · whoiswho · nine other stores" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;size=12;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="60" y="470" width="930" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="n16" value="keycloak&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;Deployment + Service + PVC&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="540" width="455" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n17" value="catalogfrontend · catalogsearch · catalogmetadata" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="535" y="540" width="455" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n18" value="ConfigMap optimusdb-genesis-issuers&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;NEW · two issuer DIDs&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;dashed=1;dashPattern=4 4;" parent="1" vertex="1">
+          <mxGeometry x="60" y="600" width="930" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="n19" value="namespace: optimusissuer — NEW" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=none;strokeColor=#808080;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=2;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="1060" y="190" width="410" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="n20" value="optimusIssuer&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;Deployment · 1 replica&lt;br&gt;Go binary with embedded React&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="230" width="350" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" value="Service&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;:8090&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="345" width="350" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n22" value="Secret issuer-key&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;mounted read-only, mode 0400&lt;/font&gt;" style="shape=note;size=14;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=11;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="405" width="350" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n23" value="NetworkPolicy&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;egress: agents, Keycloak, DNS only&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="475" width="350" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="n24" value="IngressRoute&lt;br&gt;&lt;font color=&quot;#666666&quot; size=&quot;1&quot;&gt;/issuer&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="545" width="350" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="n25" value="no PVC — stateless" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;dashed=1;dashPattern=4 4;" parent="1" vertex="1">
+          <mxGeometry x="1090" y="605" width="350" height="35" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="4 — What each component holds" id="4_—_What_each_component_holds">
+    <mxGraphModel dx="1674" dy="836" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="n1" value="What each component holds, and whether a request can be authorized without it" style="text;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontSize=18;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="30" y="16" width="1440" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" value="The last column is the one that matters: only one component must be reachable." style="text;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontSize=11;fontColor=#555555;" parent="1" vertex="1">
+          <mxGeometry x="30" y="46" width="1440" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" value="Component" style="text;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontSize=11;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="60" y="100" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n4" value="Holds" style="text;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontSize=11;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="370" y="100" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n5" value="Key material" style="text;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontSize=11;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="710" y="100" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n6" value="Required for a request to be authorized" style="text;html=1;align=left;verticalAlign=middle;fillColor=none;strokeColor=none;fontSize=11;fontStyle=1;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="100" width="390" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="n7" value="A Cipher or ICCS App" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="140" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n8" value="its credential and key" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="370" y="140" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n9" value="private key on its own host" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="710" y="140" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n10" value="n/a — it is the caller" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="140" width="390" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n11" value="optimusdb1..3" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="208" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n12" value="the trust list and the stores" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="370" y="208" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n13" value="existing libp2p identity" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="710" y="208" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n14" value="YES — it is the verifier" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;strokeWidth=2.5;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="208" width="390" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n15" value="optimusIssuer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="276" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n16" value="the service issuer key" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="370" y="276" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n17" value="Kubernetes Secret" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="710" y="276" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n18" value="No" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="276" width="390" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n19" value="Root issuer" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="344" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n20" value="authority over the trust list" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="370" y="344" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n21" value="offline, sealed" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="710" y="344" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n22" value="No" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="344" width="390" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n23" value="Keycloak" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="412" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n24" value="operator sessions" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="370" y="412" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n25" value="none relevant" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="710" y="412" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n26" value="No" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="412" width="390" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n27" value="Traefik" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="480" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n28" value="routing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="370" y="480" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n29" value="TLS certificate" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="710" y="480" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n30" value="No, if reached directly" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="480" width="390" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n31" value="catalog services" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="60" y="548" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n32" value="the OptimusDDC interface" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="370" y="548" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n33" value="none" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="710" y="548" width="330" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n34" value="No" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;fontSize=12;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="1050" y="548" width="390" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

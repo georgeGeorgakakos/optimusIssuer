@@ -1,0 +1,246 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   optimusIssuer — branded for IMU and ICCS
+
+   White label: the --brand-* properties below and src/brand.js are the only
+   places that name a partner. Change them, replace src/assets, rebuild.
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* Sampled from the IMU mark: navy #305484, sky #6090b4. ICCS contributes
+     the silver neutral. */
+  --brand-navy: #305484;
+  --brand-sky: #6090b4;
+  --brand-deep: #15233a;
+  --brand-silver: #9ba3ab;
+  --strip: #eef2f6;
+  --strip-rule: #d9e1e9;
+
+  --ink: #15233a;
+  --muted: #5d6b7a;
+  --rule: #dde4ea;
+  --bg: #ffffff;
+  --panel: #f5f8fb;
+  --accent: #305484;
+  --accent-hover: #264470;
+  --accent-ink: #ffffff;
+  --focus: #6090b4;
+  --warn: #93561c;
+  --warn-bg: #fcf4ea;
+  --danger: #9a3328;
+  --ok: #2c6a42;
+
+  font-family: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e3e9ef;
+    --muted: #93a2b1;
+    --rule: #28374a;
+    --bg: #0f1826;
+    --panel: #152234;
+    --accent: #6090b4;
+    --accent-hover: #74a2c4;
+    --accent-ink: #0b1420;
+    --warn: #e2a869;
+    --warn-bg: #2a2017;
+    --danger: #e2847a;
+    --ok: #7dc497;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); background: var(--bg);
+  font-size: 15px; line-height: 1.55;
+}
+code { font-family: "IBM Plex Mono", Consolas, monospace; font-size: 0.85em; }
+.did { word-break: break-all; color: var(--muted); }
+.muted { color: var(--muted); }
+.warn { color: var(--warn); }
+.error { color: var(--danger); font-weight: 500; }
+.dim { opacity: 0.5; }
+
+.app { min-height: 100vh; display: flex; flex-direction: column; }
+.app > main { flex: 1; }
+
+/* ── brand strip ──────────────────────────────────────────────────────────
+   The logos keep a light ground in both themes: the IMU wordmark is dark and
+   would disappear on navy, and the ICCS mark carries its own white. */
+.strip { background: var(--strip); border-bottom: 1px solid var(--strip-rule); }
+.strip-inner {
+  max-width: 1240px; margin: 0 auto; padding: 14px 28px;
+  display: flex; align-items: center; gap: 24px;
+}
+.partner-primary { height: 54px; width: auto; display: block; }
+.product {
+  flex: 1; text-align: center;
+  font-family: "Titillium Web", "IBM Plex Sans", sans-serif;
+  color: var(--brand-deep);
+}
+.product strong { display: block; font-weight: 600; font-size: 24px; line-height: 1.1; }
+.product span { display: block; font-size: 13px; color: #5d6b7a; }
+.partner-disc {
+  width: 74px; height: 74px; border-radius: 50%; background: #fff; overflow: hidden;
+  display: grid; place-items: center; flex: none;
+  box-shadow: 0 0 0 1px var(--strip-rule), 0 3px 10px rgba(21, 35, 58, 0.1);
+}
+.partner-disc img {
+  width: 70px; height: 70px; object-fit: contain; border-radius: 50%; display: block;
+}
+
+/* ── navigation band, carrying the IMU crescent ── */
+.band {
+  position: relative; overflow: hidden; color: #fff;
+  background: linear-gradient(100deg, var(--brand-deep) 0%, var(--brand-navy) 62%);
+}
+.band .crescent {
+  position: absolute; right: 28px; top: 50%; transform: translateY(-50%);
+  width: 136px; height: 136px; pointer-events: none;
+}
+.band-inner {
+  position: relative; max-width: 1240px; margin: 0 auto;
+  padding: 0 190px 0 28px;          /* the right edge is the crescent's */
+  display: flex; align-items: center; gap: 28px; min-height: 54px;
+}
+.band nav { display: flex; gap: 4px; flex: 1; }
+.band nav a {
+  color: rgba(255, 255, 255, 0.72); text-decoration: none;
+  padding: 15px 14px 13px; border-bottom: 3px solid transparent;
+  font-family: "Titillium Web", "IBM Plex Sans", sans-serif; font-size: 16px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.band nav a:hover { color: #fff; }
+.band nav a.active { color: #fff; border-bottom-color: var(--brand-sky); font-weight: 600; }
+.band nav a:focus-visible { outline: 2px solid #fff; outline-offset: -4px; border-radius: 2px; }
+.who {
+  position: relative; z-index: 1;
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: rgba(255, 255, 255, 0.82);
+}
+.avatar {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--brand-sky); color: var(--brand-deep);
+  display: grid; place-items: center; font-weight: 600; font-size: 13px;
+}
+button.link.on-band { color: rgba(255, 255, 255, 0.82); }
+button.link.on-band:hover { color: #fff; }
+
+/* ── content ── */
+main { padding: 34px 28px 48px; max-width: 1240px; width: 100%; margin: 0 auto; }
+.page > p.muted:first-of-type { font-size: 15px; margin-bottom: 18px; }
+h1 {
+  font-family: "Titillium Web", "IBM Plex Sans", sans-serif;
+  font-size: 30px; margin: 0 0 6px; font-weight: 600; line-height: 1.15;
+}
+h2 {
+  font-family: "Titillium Web", "IBM Plex Sans", sans-serif;
+  font-size: 20px; margin: 24px 0 8px; font-weight: 600;
+}
+h3 { font-size: 14px; margin: 18px 0 6px; font-weight: 600; }
+p { max-width: 72ch; }
+
+table {
+  width: 100%; border-collapse: separate; border-spacing: 0; font-size: 14px;
+  margin: 16px 0; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden;
+}
+th {
+  text-align: left; font-weight: 600; font-size: 12px; color: var(--muted);
+  background: var(--panel); border-bottom: 1px solid var(--rule); padding: 10px 14px;
+}
+td { padding: 12px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+tbody tr:last-child td { border-bottom: none; }
+.warn-cell { color: var(--warn); font-weight: 500; }
+
+label { display: block; margin: 12px 0; font-size: 13px; color: var(--muted); }
+input, select {
+  display: block; width: 100%; max-width: 480px; margin-top: 5px;
+  padding: 9px 11px; border: 1px solid var(--rule); border-radius: 6px;
+  font-size: 14px; color: var(--ink); font-family: inherit; background: var(--bg);
+}
+input:focus, select:focus {
+  border-color: var(--focus); outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 25%, transparent);
+}
+input.filter { max-width: 340px; margin: 10px 0; }
+
+button {
+  padding: 9px 16px; border: 1px solid var(--accent); background: var(--accent);
+  color: var(--accent-ink); border-radius: 6px; cursor: pointer; font-size: 14px;
+  font-family: inherit; font-weight: 500; transition: background 0.15s;
+}
+button:hover:not(:disabled) { background: var(--accent-hover); border-color: var(--accent-hover); }
+button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+button.secondary { background: transparent; color: var(--ink); border-color: var(--rule); }
+button.secondary:hover:not(:disabled) { background: var(--panel); border-color: var(--rule); }
+button.danger { background: transparent; color: var(--danger); border-color: var(--danger); }
+button.danger:hover:not(:disabled) { background: color-mix(in srgb, var(--danger) 10%, transparent); }
+button.link {
+  background: none; border: none; color: var(--accent);
+  text-decoration: underline; text-underline-offset: 2px; padding: 0 6px;
+}
+button.link:hover:not(:disabled) { background: none; }
+
+.panel {
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 10px;
+  padding: 22px 26px; margin: 22px 0; border-top: 3px solid var(--brand-sky);
+}
+.actions { display: flex; gap: 10px; align-items: center; margin-top: 16px; flex-wrap: wrap; }
+
+dl { display: grid; grid-template-columns: 150px 1fr; gap: 6px 16px; font-size: 14px; }
+dt { color: var(--muted); }
+dd { margin: 0; }
+
+.caps { margin: 10px 0; }
+.cap-add { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.cap-add input { margin: 0; max-width: 220px; }
+.cap-list { list-style: none; padding: 0; margin: 10px 0; }
+.cap-list li {
+  padding: 8px 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--bg);
+  margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+}
+.cap-list li.wild { border-color: var(--warn); background: var(--warn-bg); }
+p.warn {
+  background: var(--warn-bg); border-left: 3px solid var(--warn);
+  padding: 9px 13px; border-radius: 0 6px 6px 0; font-size: 13px;
+}
+
+.issued { margin-top: 20px; }
+pre {
+  background: var(--bg); border: 1px solid var(--rule); border-radius: 6px;
+  padding: 14px; overflow-x: auto; font-size: 12px; max-height: 360px; line-height: 1.5;
+  font-family: "IBM Plex Mono", Consolas, monospace;
+}
+
+/* ── footer ── */
+footer { border-top: 1px solid var(--rule); background: var(--panel); }
+.footer-inner {
+  max-width: 1240px; margin: 0 auto; padding: 22px 28px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+  font-size: 13px; color: var(--muted);
+}
+.footer-inner .em { height: 28px; width: auto; }
+.footer-inner .grow { flex: 1; min-width: 220px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .band nav a, button { transition: none; }
+}
+
+@media (max-width: 760px) {
+  .strip-inner, .band-inner, main, .footer-inner { padding-left: 16px; padding-right: 16px; }
+  .partner-primary { height: 38px; }
+  .product strong { font-size: 19px; }
+  .product span { display: none; }
+  .partner-disc { width: 52px; height: 52px; }
+  .partner-disc img { width: 49px; height: 49px; }
+  .band .crescent { width: 96px; height: 96px; right: -34px; opacity: 0.55; }
+  .band-inner { gap: 10px; }
+  .band nav { overflow-x: auto; scrollbar-width: none; min-width: 0; }
+  .band nav::-webkit-scrollbar { display: none; }
+  .band nav a { padding: 12px 10px 10px; font-size: 15px; white-space: nowrap; flex: none; }
+  .who .name, button.link.on-band { display: none; }
+  h1 { font-size: 25px; }
+  table { display: block; overflow-x: auto; }
+  dl { grid-template-columns: 1fr; }
+}

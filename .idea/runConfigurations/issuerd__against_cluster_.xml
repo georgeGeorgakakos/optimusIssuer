@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="issuerd (against cluster)" type="GoApplicationRunConfiguration" factoryName="Go Application">
+    <module name="optimusIssuer" />
+    <working_directory value="$PROJECT_DIR$" />
+    <!-- Run locally but talk to the deployed agents and Keycloak. Requires a
+         port-forward or a reachable ingress; see CONTRIBUTING.md. -->
+    <parameters value="-key ./dev.key -agent http://193.225.250.240/optimusdb1 -oidc-issuer http://193.225.250.240/realms/optimusddc -oidc-audience optimusissuer" />
+    <kind value="PACKAGE" />
+    <package value="github.com/georgeGeorgakakos/optimusIssuer/cmd/issuerd" />
+    <directory value="$PROJECT_DIR$" />
+    <filePath value="$PROJECT_DIR$/cmd/issuerd/main.go" />
+    <method v="2" />
+  </configuration>
+</component>

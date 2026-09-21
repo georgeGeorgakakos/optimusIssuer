@@ -1,0 +1,25 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: issuer-stripprefix
+  namespace: optimusissuer
+spec:
+  stripPrefix:
+    prefixes: ["/issuer"]
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: optimusissuer
+  namespace: optimusissuer
+spec:
+  entryPoints: ["websecure"]      # TLS is a prerequisite, not an option
+  routes:
+    - match: PathPrefix(`/issuer`)
+      kind: Rule
+      priority: 120
+      middlewares:
+        - name: issuer-stripprefix
+      services:
+        - name: optimusissuer
+          port: 8090

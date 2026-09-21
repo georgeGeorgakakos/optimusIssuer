@@ -1,0 +1,9 @@
+# optimusIssuer runs in its own namespace so that a NetworkPolicy can restrict
+# it to exactly the traffic it needs: inbound from the ingress, outbound to the
+# agents and to Keycloak. Nothing else.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: optimusissuer
+  labels:
+    app.kubernetes.io/part-of: swarmchestrate

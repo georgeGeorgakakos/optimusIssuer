@@ -1,0 +1,33 @@
+# ── Key material and credentials — never commit ─────────────────────────────
+*.key
+*.vc.json
+dev.key
+secret.yaml
+issuers.json
+
+# ── Build output ────────────────────────────────────────────────────────────
+bin/
+dist/
+cmd/issuerd/webdist/
+web/node_modules/
+web/dist/
+coverage.out
+
+# ── Local configuration ─────────────────────────────────────────────────────
+.env
+.env.local
+web/.env.local
+
+# ── IDE ─────────────────────────────────────────────────────────────────────
+# Run configurations ARE committed: they encode the flags the service needs and
+# save everyone reconstructing them from the README. Everything else in .idea is
+# machine-local.
+.idea/*
+!.idea/runConfigurations/
+web/.idea/*
+!web/.idea/runConfigurations/
+
+*.iml
+.vscode/
+*.swp
+.DS_Store

@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Canonicalisation tests" type="GoTestRunConfiguration" factoryName="Go Test">
+    <module name="optimusIssuer" />
+    <working_directory value="$PROJECT_DIR$/internal/credential" />
+    <go_parameters value="-count=1 -v" />
+    <!-- Run these after any change to internal/canonical or internal/did. A
+         failure here means credentials this service issues will not verify
+         inside the OptimusDB agents. -->
+    <kind value="PACKAGE" />
+    <package value="github.com/georgeGeorgakakos/optimusIssuer/internal/credential" />
+    <directory value="$PROJECT_DIR$/internal/credential" />
+    <framework value="gotest" />
+    <pattern value="^\QTestCanonical\E|^\QTestIssueThenVerify\E|^\QTestDID\E" />
+    <method v="2" />
+  </configuration>
+</component>

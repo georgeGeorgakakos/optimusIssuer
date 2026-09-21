@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "keycloak-js": "^23.0.7",
-    "react": "^18.2.0",
+    "react": "^19.3.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1"
   },

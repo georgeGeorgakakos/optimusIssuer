@@ -3,7 +3,7 @@ module github.com/georgeGeorgakakos/optimusIssuer
 go 1.27.1
 
 require (
-	github.com/go-chi/chi/v5 v5.0.11
+	github.com/go-chi/chi/v5 v5.3.2
 	github.com/go-chi/cors v1.2.1
 	github.com/google/uuid v1.5.0
 	github.com/mr-tron/base58 v1.2.0

@@ -37,7 +37,7 @@ RUN CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" \
         -o /out/issuerctl ./cmd/issuerctl
 
 # ── stage 3: runtime ────────────────────────────────────────────────────────
-FROM alpine:3.19
+FROM alpine:3.24
 
 LABEL org.opencontainers.image.title="optimusIssuer" \
       org.opencontainers.image.description="Credential issuance for the OptimusDB swarm" \
